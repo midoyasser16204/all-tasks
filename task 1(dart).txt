@@ -1,0 +1,29 @@
+void main() {
+  Rectangle myrec =  Rectangle(5.0,3.0);
+  myrec.display();
+}
+
+abstract class Shape {
+  double area();
+  
+  void display() {
+    print('Area: ${area()}');
+  }
+}
+
+class Rectangle extends Shape {
+  double width;
+  double height;
+  
+  Rectangle(this.width,this.height);
+  
+    double area() {
+    return width * height;
+  }
+  
+  void display() {
+    print('Width: $width');
+    print('Height: $height');
+    super.display();
+  }
+}
