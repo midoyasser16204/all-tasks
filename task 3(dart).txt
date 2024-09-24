@@ -1,0 +1,35 @@
+late String name2;
+
+void main() {
+    name2="ahmed";
+    Data <int> intdata= Data<int>(10);
+    //Data <String> Stringdata= Data<String>("10");
+    intdata.name="aly";
+    print(genricMethod<int>(10));
+    String? name;
+    name="jone";
+    name=null;
+    String name1=name??"ahmed";
+    List<int?>items=[1,2,null,4,5];
+    Pair pair = new Pair("mohamed",20);
+    pair.printPair();
+}
+
+class Data <T extends num> {
+    late String name;
+    T data;
+    Data(this.data);
+}
+
+T genricMethod <T> (T value) {
+    return value;
+}
+
+class Pair<T,U> {
+    T first;
+    U second;
+    Pair(this.first,this.second);
+    void printPair() {
+        print("pair $first . $second");
+    }
+}

@@ -1,0 +1,15 @@
+import "dart:async";
+void main(){
+   StreamController<String> controller = StreamController<String>();
+   StreamSubscription<String> subscription = controller.stream.listen(
+       (value){
+           print(value);
+       },
+       
+       cancelOnError: false
+       );
+       controller.add("hello");
+       controller.add("world!");
+       //subscription.cancel();
+       controller.close();
+}

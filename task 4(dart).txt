@@ -1,0 +1,14 @@
+void main() async{
+   print("start");
+   //fetchData();
+   String data = await fetchDataFromServer();
+    print(data);
+   print("end");
+}
+void fetchData() async{
+    String data = await fetchDataFromServer();
+    print(data);
+}
+Future <String>fetchDataFromServer(){
+    return Future.delayed(Duration(seconds:5),()=>"data has been returned from server");
+}
